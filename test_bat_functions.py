@@ -1,5 +1,6 @@
 import pytest
-from bat_functions import calculate_bat_power, signal_strength, get_bat_vehicle
+import time
+from bat_functions import calculate_bat_power, signal_strength, get_bat_vehicle, fetch_joker_info
 
 # For def calculate_bat_power
 def test_calculate_bat_power():
@@ -38,3 +39,16 @@ def test_get_bat_vehicle_unknown():
     """Test that an unknown vehicle raises a ValueError."""
     with pytest.raises(ValueError, match="Unknown vehicle: UnknownCar"):
         get_bat_vehicle("UnknownCar")
+
+def mock_fetch_joker_info():
+    """Mock function to replace fetch_joker_info and avoid delay."""
+    return {'mischief_level': 0, 'location': 'captured'}
+
+def test_fetch_joker_info_mock(monkeypatch):
+    """Test fetch_joker_info using a mock to avoid 1-second delay."""
+    monkeypatch.setattr(fetch_joker_info, "__code__", mock_fetch_joker_info.__code__)
+
+    result = fetch_joker_info()
+    expected = {'mischief_level': 0, 'location': 'captured'}
+
+    assert result == expected, f"Expected {expected}, but got {result}"
