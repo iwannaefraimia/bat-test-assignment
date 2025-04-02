@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - exercise-*  # Τρέχει και στα branches των ασκήσεων
+      - exercise-* 
   pull_request:
     branches:
       - main
