@@ -2,7 +2,7 @@
 
 This repository contains test implementations for various functions related to Batman's tools and operations. The assignment consists of four exercises that focus on different testing techniques using pytest, including basic unit testing, fixtures, mocking, and GitHub Actions for continuous integration.
 
-##Repository Structure
+## Repository Structure
 
 bat_functions.py - Contains the core functions to be tested.
 
@@ -10,7 +10,7 @@ test_bat_functions.py - Contains unit tests for the functions in bat_functions.p
 
 .github/workflows/pytest.yml - GitHub Actions workflow for automated testing.
 
-##Setup
+## Setup
 
 To run the tests locally, follow these steps:
 
@@ -20,7 +20,7 @@ To run the tests locally, follow these steps:
 4. Install dependencies: pip install -r requirements.txt
 5. Run the tests: pytest test_bat_functions.py
 
-###Exercise 1: Writing Basic Tests
+### Exercise 1: Writing Basic Tests
 
 For the following functions:
 
@@ -35,7 +35,7 @@ test_calculate_bat_power: Ensures correct power calculation.
 test_signal_strength: Uses pytest parameterization to test different distances.
 
 
-###Exercise 2: Using Fixtures
+### Exercise 2: Using Fixtures
 
 We introduced a fixture to provide reusable data for testing Batman's vehicles.
 
@@ -49,7 +49,7 @@ Verified that get_bat_vehicle returns the correct specifications for known vehic
 
 Ensured that the function raises an error for unknown vehicles.
 
-###Exercise 3: Mocking External Dependencies
+### Exercise 3: Mocking External Dependencies
 
 The function fetch_joker_info() simulates fetching Joker-related data, including a 1-second delay.
 
@@ -59,7 +59,7 @@ Used pytest.monkeypatch to mock the function and return { 'mischief_level': 0, '
 
 Verified that the mocked response was used in the test.
 
-###Exercise 4: Continuous Integration with GitHub Actions
+### Exercise 4: Continuous Integration with GitHub Actions
 
 We set up GitHub Actions to run tests automatically:
 
@@ -69,7 +69,7 @@ The workflow installs dependencies and runs pytest on push and pull_request even
 
 It runs on Ubuntu using Python 3.10.
 
-##Branching Strategy
+## Branching Strategy
 
 Each exercise was developed in its own branch following the naming convention:
 
@@ -84,7 +84,7 @@ exercise-4
 Once completed, changes from each branch were merged into main.
 This approach ensures a structured and reviewable workflow.
 
-Conclusion
+## Conclusion
 
 This project demonstrates fundamental testing techniques using pytest, including unit testing, fixtures, mocking, and automated testing with GitHub Actions.
 
